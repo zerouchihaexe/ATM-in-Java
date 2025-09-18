@@ -1,0 +1,99 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    Random PIN = new Random();
+	    Random Balance = new Random();
+	    Scanner dc = new Scanner(System.in);
+	    int pin = PIN.nextInt(9999-1000+1) + 1000;
+	    int BankBalance = Balance.nextInt(5000-10000+1) + 5000;
+	    
+		System.out.printf("Welcome to ATM's ATM \n");
+		System.out.printf("\n");
+		System.out.printf("Select Your Langauge");
+		System.out.printf("\nअपनी भाषा चुनें");
+		
+		System.out.printf("\n1. English");
+		
+		System.out.printf("\n2. हिंदी")	;
+		
+		System.out.printf("\nEnter your choice: ");
+		int choice = dc.nextInt();
+		
+		switch(choice)
+		{
+		case 1:
+		
+		System.out.printf("Your PIN is: %d", pin);
+		System.out.printf("\n");
+		
+		System.out.printf("\nEnter your PIN: ");
+		int confirmPIN = dc.nextInt();
+		
+		
+		if(confirmPIN == pin)
+		try
+		{
+		    System.out.printf("\n");
+		    
+		    System.out.printf("Authorizing");
+		    Thread.sleep(1000);
+		    System.out.printf(". ");
+		    Thread.sleep(1000);
+		    System.out.printf(" . ");
+		    Thread.sleep(1000);
+		    System.out.printf(" .");
+		    
+		    Thread.sleep(3000);
+		   System.out.printf("\n");
+		   
+		    System.out.printf("PIN confirmed! Access Granted");
+		    System.out.printf("\n");
+		    
+		    System.out.printf("Fetching Bank Balance");
+		    
+		    Thread.sleep(1000);
+		    System.out.printf(". ");
+		    Thread.sleep(1000);
+		    System.out.printf(" . ");
+		    Thread.sleep(1000);
+		    System.out.printf(" .");
+		    Thread.sleep(2000);
+		    
+		    System.out.printf("\n");
+		    System.out.printf("Your Bank Balance is: %d", BankBalance);
+		    
+		}catch(InterruptedException test)
+		{
+		    test.printStackTrace();
+		}
+		else
+		try
+		{
+		 
+		    System.out.printf("Authorizing");
+		    Thread.sleep(1000);
+		    System.out.printf(". ");
+		    Thread.sleep(1000);
+		    System.out.printf(" . ");
+		    Thread.sleep(1000);
+		    System.out.printf(" .");
+		    
+		    Thread.sleep(3000);
+		    
+		    System.out.printf("PIN incorrect access denied");
+		} catch(InterruptedException wrongPIN)
+		
+		{
+		    wrongPIN.printStackTrace();
+		}
+		    break;
+		}
+	
+		    
+		
+	}
+}
+
